@@ -1,8 +1,8 @@
 # Yotsuba Source
 
-quick rundown:
+Quick Rundown:
 
-setup php5.6 (end of support 2018) and mysql, then change db_config.php file to
+Setup php5.6 (end of support 2018) and mysql, then change db_config.php file to
 
 ```PHP
 <?php
