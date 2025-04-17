@@ -1,0 +1,7 @@
+#!/bin/sh
+for board in `cat /www/global/yotsuba/boardlist.txt`;
+do
+	echo "rebuilding $board";
+	/usr/local/bin/wget --tries=1 --timeout=60 --no-check-certificate -O/dev/null -U- https://10.0.0.19/$board/imgboard.php?mode=rebuildthumb >/dev/null
+done
+

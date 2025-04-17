@@ -1,0 +1,12 @@
+body {
+  font-family: 'Helvetica Neue', arial, sans-serif;
+  color: #393836;
+  background-color: #E7E7E7;
+}
+#success {
+  margin-top: 25px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #00A550;
+}

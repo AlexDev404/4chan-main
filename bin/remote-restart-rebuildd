@@ -1,0 +1,3 @@
+#!/bin/sh
+
+[ -e /usr/local/bin/suid_restart_rebuildd ] && exec /usr/local/bin/suid_restart_rebuildd

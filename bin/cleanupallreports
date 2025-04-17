@@ -1,0 +1,7 @@
+#!/bin/sh
+for board in `cat /www/global/yotsuba/boardlist.txt`;
+do
+	echo "rebuilding $board";
+	wget --tries=1 --timeout=60 --no-check-certificate -O/dev/null -U- https://www.4chan.org/reports/?action=cleanup&board=$board >/dev/null
+done
+

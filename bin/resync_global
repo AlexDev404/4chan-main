@@ -1,0 +1,30 @@
+#!/usr/bin/perl
+#This resyncs all 4chan hosts global directories to the primary one on yotsuba
+
+$lock = "/tmp/resync_lock";
+if (-e $lock) {die;}
+
+if (-e "/www/global/yotsuba/block_resync") {die;}
+
+open(F, $lock) && close F;
+
+open(HOST,"/bin/hostname|");
+$hostname = <HOST>;
+chomp $hostname;
+if ($hostname ne "yotsuba.4chan.org") {
+  print "this command should only be run on yotsuba!!\n";
+  exit;
+}
+@hosts = ("koiwai.int","ayase.int","danbo.int","miura.int");
+foreach (@hosts) {
+  print "sync $_";
+  system "ssh -p 914 -l global -O check $_";
+  if ($? != 0) {
+    system "rm -f /tmp/global@".$_.":914";
+    system "ssh -p 914 -l global -o BatchMode=yes $_ exec sleep 36000 &";
+    sleep(5);
+  }
+  system "/usr/local/bin/rsync -cO --delete --rsh='ssh -p 914' -a /www/global/ global\@$_:/www/global/";
+}
+
+unlink($lock);

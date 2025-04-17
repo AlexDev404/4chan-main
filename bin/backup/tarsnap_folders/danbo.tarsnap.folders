@@ -1,0 +1,9 @@
+/etc
+/usr/local
+/var/db
+/home
+/root
+/boot/loader.conf
+/usr/src/sys/amd64/conf
+/www/conf
+/www/keys

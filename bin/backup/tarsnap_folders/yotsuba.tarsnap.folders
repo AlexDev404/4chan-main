@@ -1,0 +1,15 @@
+/etc
+/usr/local
+/var/db
+/var/named
+/home
+/root
+/boot/loader.conf
+/usr/src/sys/amd64/conf
+/www/conf
+/www/4chan.org/web/www
+/www/4chan.org/web/team
+/www/4chan.org/web/reports
+/www/git
+/www/keys
+/www/global

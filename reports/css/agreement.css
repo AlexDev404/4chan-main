@@ -1,0 +1,290 @@
+/* YUI 3.9.1 (build 5852) Copyright 2013 Yahoo! Inc. http://yuilibrary.com/license/ */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}input,textarea,legend{color:#000}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  font-size: 13px;
+  font-family: 'Helvetica Neue', arial, sans-serif;
+  color: #393836;
+  background-color: #E7E7E7;
+}
+
+header {
+  background-color: #2b2b2b;
+  color: #9e9e9e;
+  padding: 5px 10px 10px 10px;
+  box-shadow: 0 0 0 3px rgba(45, 77, 59, 0.20);
+  padding-top: 5px;
+  text-align: center;
+}
+
+footer {
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+
+a {
+  color: #00A550;
+}
+
+select:focus {
+  outline: none;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 13px;
+}
+
+h5 {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+h4, h5 {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#sign-field {
+  width: 200px;
+}
+
+#date-field {
+  width: 85px;
+}
+
+input[type=text] {
+  border: 1px solid #D2D4D3;
+  padding: 3px;
+}
+
+input[type=text]:focus {
+  outline: none;
+  border: 1px solid #00a550;
+}
+
+input[type=checkbox] {
+  margin-right: 5px;
+}
+
+#agreement-form label {
+  display: block;
+  margin: 10px 0;
+}
+
+.protip {
+  font-size: 11px;
+  margin-bottom: 5px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+strong {
+  font-weight: bold;
+}
+
+#agreement {
+  line-height: 1.5em;
+}
+
+#agreement p {
+  margin-bottom: 20px;
+}
+
+#form-header {
+  margin: 25px 0;
+  padding-top: 25px;
+  border-top: 1px solid #d2d4d3;
+}
+
+.apt {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.center {
+  text-align: center;
+}
+
+.larger {
+  font-size: larger;
+}
+
+#submit-btn {
+  display: block;
+  margin-top: 50px;
+}
+
+#content {
+  width: 600px;
+  margin: 20px auto;
+  border: 1px solid #D2D4D3;
+  padding: 50px;
+  background: #f2f2f2;
+}
+
+.right {
+  float: right;
+}
+
+#title {
+  color: #dedede;
+  font-size: 20px;
+}
+
+#menu {
+  background-color: #d2d4d3;
+  padding: 6px 5px 5px 5px;
+  text-align: center;
+  height: 18px;
+}
+
+#menu li {
+  display: inline;
+}
+
+#menu input {
+  background-color: #E7E7E7;
+  width: 100px;
+  height: 18px;
+  -webkit-appearance: none;
+  border: 0;
+  vertical-align: top;
+}
+
+.button {
+  cursor: pointer;
+  background-color: #2B2B2B;
+  border-radius: 5px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 2px 4px;
+  white-space: nowrap;
+  text-decoration: none;
+  color: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  margin: 0 2px;
+}
+
+.btn-other {
+  background-color: #1d8dc4;
+}
+
+.btn-accept {
+  background-color: #00A550;
+}
+
+.btn-deny {
+  background-color: #C41E3A;
+}
+
+span.button:focus,
+.button:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+.button-light {
+  color: inherit;
+  background-color: #e7e7e7;
+}
+
+.button-light:hover {
+  background-color: #00A550;
+}
+
+#doc-table {
+  margin: 30px auto;
+  width: 70%;
+}
+
+.items-table {
+  width: 100%;
+  cursor: default;
+  margin: auto;
+  border-left: 1px solid #D2D4D3;
+  border-right: 1px solid #D2D4D3;
+  margin-top: 10px;
+}
+
+.items-table th {
+  background-color: #D2D4D3;
+  font-weight: bold;
+  padding: 5px;
+  text-align: center;
+}
+
+.items-table td {
+  border-left: 1px solid #D2D4D3;
+  padding: 5px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.items-table tr {
+  border-bottom: 1px solid #D2D4D3;
+}
+
+.note {
+  color: #b1b3b2;
+  font-size: 11px;
+  margin-top: 3px;
+}
+
+.wm {
+  color: #ededed;
+  font-size: 10px;
+  letter-spacing: 5px;
+  margin-top: -15px;
+  position: absolute;
+  text-decoration: none;
+  margin-left: 445px;
+}
+
+.wm2 {
+  color: #ededed;
+  font-size: 10px;
+  letter-spacing: 5px;
+  margin-top: -15px;
+  position: absolute;
+  text-decoration: none;
+}
+
+#inc-warn {
+  margin-top: 25px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  color: #C41E3A;
+}
+
+/* Tooltips */ 
+#tooltip {
+  position: absolute;
+  background-color: #181f24;
+  border-radius: 3px;
+  font-size: 12px;
+  padding: 5px 8px 4px 8px;
+  z-index: 100000;
+  word-wrap: break-word;
+  white-space: pre-line;
+  max-width: 400px;
+  color: #dedede;
+}
+
+#tooltip s {
+  background-color: #000;
+  color: #000;
+}

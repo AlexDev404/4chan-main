@@ -1,0 +1,32 @@
+#!/usr/local/bin/bash
+
+[ -e /var/run/remount.lock ] && exit
+#only run once (if it blocks for long enough for the next one to start)
+touch /var/run/remount.lock
+
+if [ -e /www/4chan.org/web/boards/c ]; then
+        echo "no need to remount"
+        rm -f /var/run/remount.lock
+        exit
+fi
+
+echo "remounting"
+printf "remount " >> /www/perhost/remount_nfs_log
+date >> /www/perhost/remount_nfs_log
+
+/usr/local/www/bin/apachectl stop && sleep 4 && killall -9 httpd
+#clear old mounts
+exit=0
+while [ "`mount | grep -c koiwai.int`" -gt 0 -a "$exit" -eq 0 ]; do
+  (umount -f /www/4chan.org/web/images &&
+   umount -f /www/4chan.org/web/boards &&
+   umount -f /www/4chan.org/web/thumbs) || exit=1
+done
+
+# and readd them
+mount /www/4chan.org/web/images || exit 1
+mount /www/4chan.org/web/boards || exit 1
+mount /www/4chan.org/web/thumbs || exit 1
+/usr/local/www/bin/apachectl start
+
+rm -f /var/run/remount.lock

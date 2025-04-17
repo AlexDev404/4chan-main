@@ -1,0 +1,6 @@
+#!/usr/local/bin/bash -v
+
+killall -9 ssh
+killall -9 autossh
+killall -9 sleep
+rm -f /tmp/global@{fuuka,yotsuba,ena,jumbo,ayase,koiwai}.int:914

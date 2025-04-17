@@ -1,0 +1,1 @@
+/www/global/yotsuba/payments/index-test.php

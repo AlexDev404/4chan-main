@@ -1,0 +1,11 @@
+/etc
+/usr/local/src
+/usr/local/etc
+/var/db
+/home
+/root
+/boot/loader.conf
+/usr/src/sys/amd64/conf
+/usr/local/mysql/my.cnf
+/backup/mysql/backend_schema.sql
+/backup/mysql/pass_users.sql

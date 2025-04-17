@@ -1,0 +1,43 @@
+#!/usr/bin/perl -W -U
+use POSIX;
+use File::Basename;
+
+if ($#ARGV<0) {
+  print "run_global command [arg] [arg] ...\n";
+  exit;
+}
+
+# get my hostname
+my @uname = POSIX::uname();
+my $host = $uname[1];
+if($host =~ m{^(\w+)}) {
+	$host = $1;
+} else { die "Bad hostname: $host."; }
+
+#suid security: clear env
+$ENV{PATH} = "/bin:/usr/bin";
+delete @ENV{qw(IFS CDPATH ENV BASH_ENV)};
+$ARGV[0] = "bin/".basename($ARGV[0]);
+
+#switch to global user
+$<=$>;
+
+@hosts  = ("koiwai.int", "ayase.int", "yotsuba.int","danbo.int");
+$command = join(" ",@ARGV);
+# run locally first
+system "/www/global/$command";
+
+foreach(@hosts) { print "$_\n";
+if(/^$host/) {
+ next;
+} else {
+  system "ssh -p 914 -l global -O check $_";
+  if ($? != 0) {
+    system "rm -f /tmp/global@".$_.":914";
+    system "ssh -p 914 -l global -o BatchMode=yes $_ exec sleep 36000 &";
+    sleep(5);
+  }
+
+  system "ssh -p 914 -l global $_ nice -n 2 /www/global/$command &";
+}
+}

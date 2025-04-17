@@ -1,0 +1,11 @@
+#!/usr/local/bin/bash
+
+
+for board in $1; do
+	if [ -d /www/4chan.org/web/boards/$board ] ; then
+		pushd /www/4chan.org/web/boards/$board
+		kill `cat /www/perhost/rebuildd-$board.pid` || true
+		nohup nice -n 1 /usr/local/bin/php /www/global/yotsuba/rebuildd.php > /www/perhost/rebuildd-$board.log 2>&1 &
+		popd
+	fi
+done

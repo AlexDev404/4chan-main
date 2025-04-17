@@ -1,0 +1,3 @@
+#!/bin/sh
+
+find /www/perhost/ -type f -exec truncate -s 0 {} \;
